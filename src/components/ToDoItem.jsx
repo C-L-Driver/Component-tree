@@ -1,15 +1,28 @@
 import React, { useState } from "react";
 
+const [uline, setUline] = useState(false)
 
-function lineThrough (trueorfalse) {
+function lineThrough () {
+  
+  const customStyle = {
+
+      text-decoration: "line-through"
+    }
+
+
+    setUline(true)
+
+
   return (
-    <div>
-    trueorfalse ? 
-    style=text-decoration: "line-through" :
-    style=text-decoration: ""
-    </div>
-    )
-}
+    
+    //  trueorfalse ? 
+    // style={customStyle} :
+    // null 
+    
+    // )
+  }
+
+
 function ToDoItem(props) {
 
   return ( 
@@ -20,6 +33,7 @@ function ToDoItem(props) {
   
     )
 }
+
 
   
     
