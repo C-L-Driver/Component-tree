@@ -1,52 +1,18 @@
 import React, { useState } from "react";
 
-const [uline, setUline] = useState(false)
-
-function lineThrough () {
-  
-  const customStyle = {
-
-      text-decoration: "line-through"
-    }
-
-
-    setUline(true)
-
-
-  return (
-    
-    //  trueorfalse ? 
-    // style={customStyle} :
-    // null 
-    
-    // )
-  }
-
-
 function ToDoItem(props) {
+  const [isDone, setIsDone] = useState(false);
 
-  return ( 
-  
-  
-  <li onClick={lineThrough}> {props.text}</li>
-    
-  
-    )
-}
-
-
-  
-    
-   
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  function handleClick() {
+    setIsDone((prevValue) => {
+      return !prevValue;
+    });
+  }
+  return (
+    <div onClick={handleClick}>
+      <li style={{ textDecoration: "line-through" }}> {props.text}</li>
+    </div>
+  );
 }
 
 export default ToDoItem;
